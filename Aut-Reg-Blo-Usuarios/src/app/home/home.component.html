@@ -1,0 +1,12 @@
+﻿<h1>¡BIENVENIDO! {{currentUser.firstName}}</h1>
+<p>CONTROL DE REGISTRO DE USUARIOS</p>
+<h3>USUARIOS REGISTRADOS:</h3>
+
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}}) ({{user.usernametype}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Bloquear Usuario</a>
+        - <a (click)="(user.id)" class="text-danger">Habilitar Usuario</a>
+    </li>
+</ul>
+

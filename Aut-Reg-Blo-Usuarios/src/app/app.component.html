@@ -1,0 +1,28 @@
+﻿<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" (click)="logout()">Salir</a>
+    </div>
+</nav>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <alert></alert>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-center">
+    <p>
+        <a target="_top">BLOQUEO Y AUTENTIFICACIÓN DE USUARIOS</a>
+    </p>
+    <p>
+        <a  target="_top">BASE DE DATOS PARA DISPOSITIVOS MÓVILES</a>
+    </p>
+</div>
