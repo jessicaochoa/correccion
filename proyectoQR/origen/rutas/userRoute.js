@@ -1,4 +1,5 @@
 const{Router} = require('express');
+
 const router = Router();
 
 const modelUser = require('../models/users');
@@ -10,6 +11,7 @@ router.get('/', async (require,res)=>{
 });
 
 router.post('/', async (require,res)=>{
+
     const {idUser, name, lastname} = require.body;
     const newUser = new modelUser({idUser, name, lastname});
     console.log(newUser);
