@@ -1,0 +1,40 @@
+const {Schema,model}= require('mongoose');
+const vistanteSchema = new Schema({
+  idVisitante:{
+    type:String,
+    requiere:true
+  },
+  nombre:{
+    type:String,
+    requiere:true
+  },
+  apellidoP:{
+    type:String,
+    requiere:true
+  },
+  apellidoM:{
+    type:String,
+    requiere:true
+  },
+  correo:{
+    type:String,
+    requiere:true
+  },
+  area:{
+    type:String,
+    requiere:true
+  },
+  idTrabajador:{
+    type:String,
+    requiere:true
+  },
+  motivo:{
+    type:String,
+    requiere:true
+  },
+  fechas:{
+    type:Date,
+    default: Date.now()
+  }
+})
+module.exports=model('usuarios',vistanteSchema);

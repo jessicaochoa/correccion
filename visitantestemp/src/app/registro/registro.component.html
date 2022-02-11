@@ -1,0 +1,69 @@
+<form class="row g-3 needs-validation" [formGroup]="formularioPrueba" (ngSubmit)="Registrar()">
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Nombre</label>
+    <input formControlName="nombre" type="text" class="form-control">
+    <div *ngIf="nombre.errors && nombre.touched">
+      <p *ngIf="nombre.hasError('required')">Dato requerido.</p>
+      <p *ngIf="nombre.hasError('pattern')">Forma incorrecta</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Apellido Paterno</label>
+    <input
+      formControlName="nombreA"
+      type="text"
+      class="form-control">
+    <div *ngIf="nombreA.errors && nombreA.touched">
+      <p *ngIf="nombreA.hasError('required')">Dato requerido.</p>
+      <p *ngIf="nombreA.hasError('pattern')">Forma incorrecta</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Apellido Materno</label>
+    <input
+      formControlName="nombreM"
+      type="text"
+      class="form-control"
+      id="jasmine_content">
+    <div *ngIf="nombreM.errors && nombreM.touched">
+      <p *ngIf="nombreM.hasError('required')">Dato requerido.</p>
+      <p *ngIf="nombreM.hasError('pattern')">Forma incorrecta</p>
+    </div>
+  </div>
+  <div class="md-5">
+    <label for="exampleInputEmail1" class="form-label">Direccion de correo electronico</label>
+    <input
+      formControlName="email"
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp">
+
+    <div id="emailHelp" class="form-text"><I>Inserte su correo</I></div>
+    <div *ngIf="email.errors && email.touched">
+      <p *ngIf="email.hasError('required')">Dato requerido.</p>
+      <p *ngIf="email.hasError('email')">Correo incorrecto</p>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <label for="inputState" class="form-label">Area que visita</label>
+    <select id="idArea" class="form-select"  formControlName="idare">
+
+      <option  *ngFor="let dato of _arregloarea" [value]="dato.idArea">{{dato.nombreArea}}</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="inputState" class="form-label">Personas de area</label>
+    <select id="inputState" class="form-select"  formControlName="idPersona">
+      <option  *ngFor="let dato of _arregloUsuario" [value]="dato.idEmpleado">{{dato.nombre}}</option>
+
+    </select>
+  </div>
+  <div class="form-floating">
+    <textarea class="form-control" placeholder="Leave a comment here" id="txtMotivo"></textarea>
+    <label for="floatingTextarea">Motivo</label>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Registrar</button>
+  </div>
+</form>
