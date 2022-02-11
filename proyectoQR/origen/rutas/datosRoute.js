@@ -8,7 +8,6 @@ router.get('/', async (require,res)=>{
     res.json(datos);
     //res.send("consulta realizada");
 });
-
 router.post('/', async (require,res)=>{
     const {nombre, a_Paterno, a_Materno, celular, sexo, dia, mes, año, email, contraseña} = require.body;
     const newDato = new modelDatos({nombre, a_Paterno, a_Materno, celular, sexo, dia, mes, año, email, contraseña});
@@ -20,5 +19,4 @@ router.post('/', async (require,res)=>{
    
    // res.send("datos agregados");
 });
-
 module.exports = router;
